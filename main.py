@@ -21,11 +21,3 @@ templates = Jinja2Templates(directory="app/templates")
 from app.routers import home
 
 app.include_router(home.router)
-
-
-from app.database.database import engine
-from app.database.base import Base
-
-from app import models
-
-Base.metadata.create_all(bind=engine)
