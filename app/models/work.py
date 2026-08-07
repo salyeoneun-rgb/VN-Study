@@ -18,4 +18,5 @@ class Work(Base):
     description: Mapped[str | None] = mapped_column(
         String(1000),
         nullable=True,
+        default=None,
     )

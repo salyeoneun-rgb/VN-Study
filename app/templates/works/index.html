@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>작품 관리</h1>
+
+<form action="/works/create" method="post">
+
+    <input
+        type="text"
+        name="title"
+        placeholder="작품명"
+        required
+    >
+
+    <br><br>
+
+    <textarea
+        name="description"
+        placeholder="설명"
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        작품 추가
+    </button>
+
+</form>
+
+<hr>
+
+{% if works %}
+
+<ul>
+
+{% for work in works %}
+
+<li>
+
+<b>{{ work.title }}</b>
+
+{% if work.description %}
+<br>
+{{ work.description }}
+{% endif %}
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% else %}
+
+<p>등록된 작품이 없습니다.</p>
+
+{% endif %}
+
+{% endblock %}

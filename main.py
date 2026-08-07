@@ -29,3 +29,8 @@ from app.database.base import Base
 from app import models
 
 Base.metadata.create_all(bind=engine)
+
+
+from app.routers import work
+
+app.include_router(work.router)
